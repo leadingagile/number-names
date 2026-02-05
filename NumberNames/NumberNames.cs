@@ -72,7 +72,7 @@ public class NumberNames
         return (long)Math.Pow(10, (numDigitGroups - 1) * 3);
     }
 
-    private static string GetDigitGroupAsNameWithLabel(int digitGroup, int numDigitGroups)
+    private static string GetDigitGroupAsNameWithLabel(int digitGroup, int digitGroupNumber)
     {
         Debug.Assert(digitGroup < 1000, "Digit group " + digitGroup + " must be less than one thousand");
         
@@ -83,10 +83,10 @@ public class NumberNames
 
         nameBuilder.Append(GetDigitGroupAsName(digitGroup));
 
-        if (numDigitGroups > 1)
+        if (digitGroupNumber > 1)
             nameBuilder
                 .Append(' ')
-                .Append(GetDigitGroupLabel(numDigitGroups));
+                .Append(GetDigitGroupLabel(digitGroupNumber));
 
         return nameBuilder.ToString();
     }
@@ -160,10 +160,10 @@ public class NumberNames
         return digitNames[onesDigit].Digit;
     }
 
-    private static string GetDigitGroupLabel(int numDigitGroups)
+    private static string GetDigitGroupLabel(int digitGroupNumber)
     {
-        Debug.Assert(numDigitGroups >= 2, "Number must have at least 2 digit groups");
+        Debug.Assert(digitGroupNumber >= 2, "Number must have at least 2 digit groups");
 
-        return digitGroupLabels[numDigitGroups];
+        return digitGroupLabels[digitGroupNumber];
     }
 }
