@@ -167,12 +167,18 @@ public class NumberNamesTest
 
     [Theory]
     [InlineData(3456789012345678901, "three quintillion four hundred fifty six quadrillion seven hundred eighty nine trillion twelve billion three hundred forty five million six hundred seventy eight thousand nine hundred one")]
-    [InlineData(9223372036854775807, "nine quintillion two hundred twenty three quadrillion three hundred seventy two trillion thirty six billion eight hundred fifty four million seven hundred seventy five thousand eight hundred seven")]
     [InlineData(5000000000000600000, "five quintillion six hundred thousand")]
     [InlineData(6000000000000000006, "six quintillion six")]
     public void Numbers_In_Quintillions(long number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
+    }
+
+    [Fact]
+    public void Max_Long_Number()
+    {
+        Assert.Equal("nine quintillion two hundred twenty three quadrillion three hundred seventy two trillion thirty six billion eight hundred fifty four million seven hundred seventy five thousand eight hundred seven", 
+                NumberNames.GetName(9223372036854775807));
     }
 
     [Fact]
