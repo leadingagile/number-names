@@ -44,7 +44,7 @@ public class NumberNames
 
     private static int GetNumDigitGroups(long number)
     {
-        return (int)Math.Floor(Math.Log10(number) / 3) + 1;
+        return (int)Math.Floor(Math.Log10(number)) / 3 + 1;
     }
 
     private static string GetRemainderAsName(long number, int numDigitGroups)
