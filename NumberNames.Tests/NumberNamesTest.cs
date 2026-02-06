@@ -175,10 +175,10 @@ public class NumberNamesTest
     }
 
     [Fact]
-    public void Max_Long_Number()
+    public void Max_Ulong_Number()
     {
-        Assert.Equal("nine quintillion two hundred twenty three quadrillion three hundred seventy two trillion thirty six billion eight hundred fifty four million seven hundred seventy five thousand eight hundred seven", 
-                NumberNames.GetName(9223372036854775807));
+        Assert.Equal("eighteen quintillion four hundred forty six quadrillion seven hundred forty four trillion seventy three billion seven hundred nine million five hundred fifty one thousand six hundred fifteen", 
+                NumberNames.GetName(ulong.MaxValue));
     }
 
     [Fact]
