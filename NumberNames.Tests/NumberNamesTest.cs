@@ -2,11 +2,11 @@
 namespace NumberNames.Tests;
 
 /*
-Z - ZERO (OUT OF SCOPE)
+Z - ZERO (ZERO)
 O - ONE (ONE DIGIT)
 M - MANY (MULTIPLE DIGITS)
 B - BOUNDRIES (N/A)
-I - longERFACES (N/A)
+I - INTERFACES (N/A)
 E - EXCEPTIONS (11-19)
 S - SIMPLE SCENARIOS (N/A)
 */
