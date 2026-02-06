@@ -34,7 +34,7 @@ public class NumberNames
         {7, "quintillion"}
     };
 
-    public static string GetName(long number)
+    public static string GetName(ulong number)
     {
         if (number == 0)
             return "zero";
@@ -42,19 +42,19 @@ public class NumberNames
         return GetRemainderAsName(number, GetNumDigitGroups(number));
     }
 
-    private static int GetNumDigitGroups(long number)
+    private static int GetNumDigitGroups(ulong number)
     {
         return (int)Math.Floor(Math.Log10(number)) / 3 + 1;
     }
 
-    private static string GetRemainderAsName(long remainder, int numDigitGroups)
+    private static string GetRemainderAsName(ulong remainder, int numDigitGroups)
     {
         if (remainder == 0)
             return "";
 
         var nameBuilder = new StringBuilder();
 
-        long digitGroupBase = GetDigitGroupBase(numDigitGroups);
+        ulong digitGroupBase = GetDigitGroupBase(numDigitGroups);
         int nextDigitGroup = (int)(remainder / digitGroupBase);
 
         nameBuilder.Append(GetDigitGroupAsNameWithLabel(nextDigitGroup, numDigitGroups));
@@ -67,9 +67,9 @@ public class NumberNames
         return nameBuilder.ToString().Trim();
     }
 
-    private static long GetDigitGroupBase(int numDigitGroups)
+    private static ulong GetDigitGroupBase(int numDigitGroups)
     {
-        return (long)Math.Pow(10, (numDigitGroups - 1) * 3);
+        return (ulong)Math.Pow(10, (numDigitGroups - 1) * 3);
     }
 
     private static string GetDigitGroupAsNameWithLabel(int digitGroup, int digitGroupNumber)

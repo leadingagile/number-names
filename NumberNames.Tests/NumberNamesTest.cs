@@ -23,7 +23,7 @@ public class NumberNamesTest
     [InlineData(7, "seven")]
     [InlineData(8, "eight")]
     [InlineData(9, "nine")]
-    public void Single_Digit_Number(long number, string name)
+    public void Single_Digit_Number(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -38,7 +38,7 @@ public class NumberNamesTest
     [InlineData(70, "seventy")]
     [InlineData(80, "eighty")]
     [InlineData(90, "ninety")]
-    public void Two_Digit_Multiples_Of_Ten(long number, string name) {
+    public void Two_Digit_Multiples_Of_Ten(ulong number, string name) {
         Assert.Equal(name, NumberNames.GetName(number));
     }
 
@@ -47,7 +47,7 @@ public class NumberNamesTest
     [InlineData(32, "thirty two")]
     [InlineData(43, "forty three")]
     [InlineData(95, "ninety five")]
-    public void Two_Digit_Non_Multiples_Of_Ten(long number, string name)
+    public void Two_Digit_Non_Multiples_Of_Ten(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -62,7 +62,7 @@ public class NumberNamesTest
     [InlineData(17, "seventeen")]
     [InlineData(18, "eighteen")]
     [InlineData(19, "nineteen")]
-    public void Eleven_To_Nineteen(long number, string name)
+    public void Eleven_To_Nineteen(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -71,7 +71,7 @@ public class NumberNamesTest
     [InlineData(100, "one hundred")]
     [InlineData(200, "two hundred")]
     [InlineData(900, "nine hundred")]
-    public void Three_Digit_Multiples_Of_Hundred(long number, string name)
+    public void Three_Digit_Multiples_Of_Hundred(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -81,7 +81,7 @@ public class NumberNamesTest
     [InlineData(257, "two hundred fifty seven")]
     [InlineData(926, "nine hundred twenty six")]
     [InlineData(906, "nine hundred six")]
-    public void Three_Digit_Non_Multiple_Of_Hundred(long number, string name)
+    public void Three_Digit_Non_Multiple_Of_Hundred(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -90,7 +90,7 @@ public class NumberNamesTest
     [InlineData(1000, "one thousand")]
     [InlineData(2000, "two thousand")]
     [InlineData(9000, "nine thousand")]
-    public void Four_Digit_Multiples_Of_Thousand(long number, string name)
+    public void Four_Digit_Multiples_Of_Thousand(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -99,7 +99,7 @@ public class NumberNamesTest
     [InlineData(1234, "one thousand two hundred thirty four")]
     [InlineData(3805, "three thousand eight hundred five")]
     [InlineData(7011, "seven thousand eleven")]
-    public void Four_Digit_Non_Multiples_Of_Thousand(long number, string name)
+    public void Four_Digit_Non_Multiples_Of_Thousand(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -108,7 +108,7 @@ public class NumberNamesTest
     [InlineData(10000, "ten thousand")]
     [InlineData(20000, "twenty thousand")]
     [InlineData(90000, "ninety thousand")]
-    public void Five_Digit_Multiples_Of_Ten_Thousand(long number, string name)
+    public void Five_Digit_Multiples_Of_Ten_Thousand(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -134,7 +134,7 @@ public class NumberNamesTest
     [Theory]
     [InlineData(123456789, "one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine")]
     [InlineData(5600000, "five million six hundred thousand")]
-    public void Numbers_In_Millions(long number, string name)
+    public void Numbers_In_Millions(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -142,7 +142,7 @@ public class NumberNamesTest
     [Theory]
     [InlineData(123456789012, "one hundred twenty three billion four hundred fifty six million seven hundred eighty nine thousand twelve")]
     [InlineData(5000600000, "five billion six hundred thousand")]
-    public void Numbers_In_Billions(long number, string name)
+    public void Numbers_In_Billions(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -151,7 +151,7 @@ public class NumberNamesTest
     [InlineData(123456789012345, "one hundred twenty three trillion four hundred fifty six billion seven hundred eighty nine million twelve thousand three hundred forty five")]
     [InlineData(5000000600000, "five trillion six hundred thousand")]
     [InlineData(600000000000006, "six hundred trillion six")]
-    public void Numbers_In_Trillions(long number, string name)
+    public void Numbers_In_Trillions(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -160,7 +160,7 @@ public class NumberNamesTest
     [InlineData(123456789012345678, "one hundred twenty three quadrillion four hundred fifty six trillion seven hundred eighty nine billion twelve million three hundred forty five thousand six hundred seventy eight")]
     [InlineData(50000000000600000, "fifty quadrillion six hundred thousand")]
     [InlineData(600000000000000006, "six hundred quadrillion six")]
-    public void Numbers_In_Quadrillions(long number, string name)
+    public void Numbers_In_Quadrillions(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
@@ -169,7 +169,7 @@ public class NumberNamesTest
     [InlineData(3456789012345678901, "three quintillion four hundred fifty six quadrillion seven hundred eighty nine trillion twelve billion three hundred forty five million six hundred seventy eight thousand nine hundred one")]
     [InlineData(5000000000000600000, "five quintillion six hundred thousand")]
     [InlineData(6000000000000000006, "six quintillion six")]
-    public void Numbers_In_Quintillions(long number, string name)
+    public void Numbers_In_Quintillions(ulong number, string name)
     {
         Assert.Equal(name, NumberNames.GetName(number));
     }
