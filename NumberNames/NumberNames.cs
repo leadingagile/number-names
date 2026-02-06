@@ -47,22 +47,22 @@ public class NumberNames
         return (int)Math.Floor(Math.Log10(number)) / 3 + 1;
     }
 
-    private static string GetRemainderAsName(long number, int numDigitGroups)
+    private static string GetRemainderAsName(long remainder, int numDigitGroups)
     {
-        if (number == 0)
+        if (remainder == 0)
             return "";
 
         var nameBuilder = new StringBuilder();
 
         long digitGroupBase = GetDigitGroupBase(numDigitGroups);
-        int nextDigitGroup = (int)(number / digitGroupBase);
+        int nextDigitGroup = (int)(remainder / digitGroupBase);
 
         nameBuilder.Append(GetDigitGroupAsNameWithLabel(nextDigitGroup, numDigitGroups));
 
         if (numDigitGroups > 1)
             nameBuilder
                 .Append(' ')
-                .Append(GetRemainderAsName(number % digitGroupBase, numDigitGroups - 1));
+                .Append(GetRemainderAsName(remainder % digitGroupBase, numDigitGroups - 1));
 
         return nameBuilder.ToString().Trim();
     }
@@ -162,7 +162,7 @@ public class NumberNames
 
     private static string GetDigitGroupLabel(int digitGroupNumber)
     {
-        Debug.Assert(digitGroupNumber >= 2, "Number must have at least 2 digit groups");
+        Debug.Assert(digitGroupNumber >= 2, "Digit group number " + digitGroupNumber + " must be at least 2 to have label");
 
         return digitGroupLabels[digitGroupNumber];
     }
